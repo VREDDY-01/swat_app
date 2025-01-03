@@ -19,3 +19,4 @@ phases:
     commands:
       # Push the Docker image to ECR
       - docker push 575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
+      - echo '[{"name":"my-container-name","imageUri":"'"$REPOSITORY_URI:$IMAGE_TAG"'"}]' > imagedefinitions.json
