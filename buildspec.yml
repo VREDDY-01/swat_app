@@ -20,3 +20,7 @@ phases:
       # Push the Docker image to ECR
       - docker push 575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
       - echo '[{"name":"swat_app","imageUri":"575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest"}]' > imagedefinitions.json
+artifacts:
+  files:
+    - imagedefinitions.json
+  discard-paths: yes
