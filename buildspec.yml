@@ -2,8 +2,10 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      docker: 18
+    commands:
+      # Ensure Docker is installed (usually already installed on CodeBuild Docker image)
+      - echo "Docker version:"
+      - docker --version
   pre_build:
     commands:
       # Log in to ECR
