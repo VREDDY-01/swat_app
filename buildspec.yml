@@ -9,17 +9,17 @@ phases:
   pre_build:
     commands:
       # Log in to ECR
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 575108947704.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 091846656105.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       # Build the Docker image
       - docker build -t swat_app .
-      - docker tag swat_app:latest 575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
+      - docker tag swat_app:latest 091846656105.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
   post_build:
     commands:
       # Push the Docker image to ECR
-      - docker push 575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
-      - echo '[{"name":"swat_app","imageUri":"575108947704.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest"}]' > imagedefinitions.json
+      - docker push 091846656105.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest
+      - echo '[{"name":"swat_app","imageUri":"091846656105.dkr.ecr.ap-south-1.amazonaws.com/swat_app:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
